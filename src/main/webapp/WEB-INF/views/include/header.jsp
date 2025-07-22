@@ -16,20 +16,48 @@
 <meta charset="UTF-8">
 <title>CareerPath</title>
 <script>
-	document.addEventListener("DOMContentLoaded",() => {
-		const menuIcon = document.getElementById("menuToggle");
-		const dropdown = document.getElementById("dropdownMenu");
+   document.addEventListener("DOMContentLoaded",() => {
+      const menuIcon = document.getElementById("menuToggle");
+      const dropdown = document.getElementById("dropdownMenu");
+      const roadmap  = document.getElementById("roadmap");
 
-		menuIcon.addEventListener("click",() => {
-			dropdown.classList.toggle("hidden");
-		});
+      menuIcon.addEventListener("click",() => {
+         dropdown.classList.toggle("hidden");
+      });
 
-		document.addEventListener("click",(event) => {
-		      if (!dropdown.contains(event.target) && !menuIcon.contains(event.target)) {
-		    	  dropdown.classList.add("hidden");
-		      }
-		    });
-	});
+      document.addEventListener("click",(event) => {
+            if (!dropdown.contains(event.target) && !menuIcon.contains(event.target)) {
+               dropdown.classList.add("hidden");
+            }
+          });
+      
+      roadmap.addEventListener("click", () => {
+         const roadmapUrl = 'http://localhost:5173/roadmap';
+         
+         const width  = 1084;
+         const height = 736;
+         const screenWidth  = window.screen.width;
+         const screenHeight = window.screen.height;
+            const left = Math.floor((screenWidth - width) / 2);
+            const top  = Math.floor((screenHeight - height) / 2);
+         
+         window.open(roadmapUrl, 'Roadmap', `width=\${width}, height=\${height}, left=\${left}, top=\${top}`);
+      });
+      
+      worldcup.addEventListener("click", () => {
+          const roadmapUrl = 'http://localhost:5173/worldcup';
+          
+          const width  = 1084;
+          const height = 736;
+          const screenWidth  = window.screen.width;
+          const screenHeight = window.screen.height;
+             const left = Math.floor((screenWidth - width) / 2);
+             const top  = Math.floor((screenHeight - height) / 2);
+          
+          window.open(roadmapUrl, 'Roadmap', `width=\${width}, height=\${height}, left=\${left}, top=\${top}`);
+       });
+       
+   });
 </script>
 </head>
 
@@ -85,10 +113,21 @@
 </div>
 
 <div class="right-fixed-bar">
-  <ul>
-    <li><img src="" alt="홈" /></li>
-    <li><img src="" alt="로드맵" /></li>
-    <li><img src="" alt="위로가기" /></li>
-  </ul>
+	<sec:authorize access="isAuthenticated()">
+		<ul>
+			<li>로그인 유저</li>
+			<li><img id="worldcup" src="" alt="월드컵" /></li>
+			<li><img src="" alt="채팅" /></li>
+			<li><img id="roadmap" src="" alt="로드맵" /></li>
+		</ul>
+	</sec:authorize>
+	<sec:authorize access="isAnonymous()">
+		<ul>
+			<li>익명 유저</li>
+			<li><a href="/error/logReq"><img src="" alt="월드컵" /></a></li>
+			<li><a href="/error/logReq"><img src="" alt="채팅" /></a></li>
+			<li><a href="/error/logReq"><img src="" alt="로드맵" /></a></li>
+		</ul>
+	</sec:authorize>
 </div>
 <body>
