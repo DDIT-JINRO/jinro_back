@@ -45,16 +45,16 @@
       });
       
       worldcup.addEventListener("click", () => {
-          const roadmapUrl = 'http://localhost:5173/worldcup';
+          const worldcup = 'http://localhost:5173/worldcup';
           
-          const width  = 1084;
-          const height = 736;
+          const width  = 1200;
+          const height = 740;
           const screenWidth  = window.screen.width;
           const screenHeight = window.screen.height;
              const left = Math.floor((screenWidth - width) / 2);
              const top  = Math.floor((screenHeight - height) / 2);
           
-          window.open(roadmapUrl, 'Roadmap', `width=\${width}, height=\${height}, left=\${left}, top=\${top}`);
+          window.open(worldcupUrl, 'worldcup', `width=\${width}, height=\${height}, left=\${left}, top=\${top}`);
        });
        
    });
