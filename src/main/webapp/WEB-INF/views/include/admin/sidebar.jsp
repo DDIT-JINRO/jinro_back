@@ -1,7 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <!-- 사이드바 -->
 <link rel="stylesheet" href="/css/admin/admSideBar.css">
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/axios.min.js"></script>
+<script src="/ckeditor5/ckeditor.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 	 const sidebar = document.querySelector('.admin-side-sidebar');
