@@ -15,13 +15,16 @@ public class WebConfig implements WebMvcConfigurer {
         // classpath:/static/images/ → /images/**
         registry.addResourceHandler("/images/**")
                 .addResourceLocations("classpath:/static/images/");
-        
+
      // classpath:/static/fonts/ → /fonts/**
         registry.addResourceHandler("/fonts/**")
                 .addResourceLocations("classpath:/static/fonts/");
-        
+
         registry.addResourceHandler("/js/**")
         		.addResourceLocations("classpath:/static/js/");
+
+        registry.addResourceHandler("/upload/**")
+        		.addResourceLocations("file:////192.168.145.21/careerpath/upload/");
     }
 }
 
