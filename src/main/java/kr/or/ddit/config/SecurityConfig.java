@@ -47,6 +47,7 @@ public class SecurityConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/worldcup/**", config);
         source.registerCorsConfiguration("/roadmap/**", config);
+        source.registerCorsConfiguration("/imtintrvw/aiimtintrvw/**", config);
         return source;
     }
     
