@@ -30,7 +30,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CareerAptitudeTestServiceImpl implements CareerAptitudeTestService {
 
-	@Value("${DEV.TEST.API_KEY}")
+	@Value("${test.api.key}")
 	private String TEST_API_KEY;
 
 	@Autowired

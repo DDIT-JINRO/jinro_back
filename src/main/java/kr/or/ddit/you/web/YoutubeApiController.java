@@ -17,7 +17,7 @@ public class YoutubeApiController {
 	@Autowired
 	YoutubeService service;
 	
-	@Value("${DEV.YOUTUBE.API_KEY}")
+	@Value("${youtube.api.key}")
 	private String API_KEY;
 
 	@GetMapping("/main/youtubeJsp")

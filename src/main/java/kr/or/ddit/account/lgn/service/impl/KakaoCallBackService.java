@@ -16,7 +16,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class KakaoCallBackService {
 	
-	@Value("${DEV.KAKAO.REST_API_KEY}")
+	@Value("${kakao.api.key}")
 	private String REST_API_KEY;
 	private final String REDIRECT_URI = "http://localhost/lgn/kakaoCallback.do";
 	

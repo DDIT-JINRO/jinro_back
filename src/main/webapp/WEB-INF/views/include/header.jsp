@@ -20,6 +20,7 @@
 <script src="/js/include/header.js"></script>
 <script>
 const memId = '<sec:authentication property="name" />'
+const frontUrl = '${frontUrl}';
 
 	document.addEventListener("DOMContentLoaded",() => {
 		const menuIcon = document.getElementById("menuToggle");
@@ -44,7 +45,7 @@ const memId = '<sec:authentication property="name" />'
 					sessionStorage.setItem("redirectUrl", location.href);
 					location.href = "/login";
 				} else {
-					const roadmapUrl = 'http://localhost:5173/roadmap';
+					const roadmapUrl = frontUrl + '/roadmap';
 					
 					const width  = 1084;
 					const height = 736;
@@ -62,7 +63,7 @@ const memId = '<sec:authentication property="name" />'
 		
 		window.addEventListener("message", (event) => {
 		    
-		    if (event.origin !== 'http://localhost:5173') {
+		    if (event.origin !== frontUrl) {
 		        console.warn(`신뢰할 수 없는 출처(${event.origin})로부터의 메시지를 무시합니다.`);
 		        return;
 		    }
@@ -86,7 +87,7 @@ const memId = '<sec:authentication property="name" />'
 				location.href = "/login";
 			} else {
 				axios.post("/admin/las/worldCupVisitLog.do")
-				const worldcupUrl = 'http://localhost:5173/worldcup';
+				const worldcupUrl = frontUrl + '/worldcup';
 				
 				const width  = 1200;
 				const height = 800;

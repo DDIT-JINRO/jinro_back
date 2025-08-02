@@ -12,9 +12,9 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class NaverCallBackService {
 	
-	@Value("${DEV.NAVER.CLIENT_ID}")
+	@Value("${naver.client.id}")
     private String CLIENT_ID;
-	@Value("${DEV.NAVER.CLIENT_SECRET}")
+	@Value("${naver.client.secret}")
     private String CLIENT_SECRET;
     private final String REDIRECT_URI = "http://localhost/lgn/naverCallback.do";
 
