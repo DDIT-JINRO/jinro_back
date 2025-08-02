@@ -20,7 +20,6 @@
 <script src="/js/include/header.js"></script>
 <script>
 const memId = '<sec:authentication property="name" />'
-const frontUrl = '${frontUrl}';
 
 	document.addEventListener("DOMContentLoaded",() => {
 		const menuIcon = document.getElementById("menuToggle");
@@ -45,7 +44,7 @@ const frontUrl = '${frontUrl}';
 					sessionStorage.setItem("redirectUrl", location.href);
 					location.href = "/login";
 				} else {
-					const roadmapUrl = frontUrl + '/roadmap';
+					const roadmapUrl = ':5173/roadmap';
 					
 					const width  = 1084;
 					const height = 736;
@@ -87,7 +86,7 @@ const frontUrl = '${frontUrl}';
 				location.href = "/login";
 			} else {
 				axios.post("/admin/las/worldCupVisitLog.do")
-				const worldcupUrl = frontUrl + '/worldcup';
+				const worldcupUrl = ':5173/worldcup';
 				
 				const width  = 1200;
 				const height = 800;

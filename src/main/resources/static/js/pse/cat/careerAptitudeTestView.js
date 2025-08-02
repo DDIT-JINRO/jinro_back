@@ -104,7 +104,7 @@ function startTest(type, title) {
 			const left = window.screenX + (window.outerWidth - width) / 2;
 			const top = window.screenY + (window.outerHeight - height) / 2;
 
-			window.open(frontUrl+`/aptiTest/${type}`, title, `width=${width},height=${height},left=${left},top=${top},resizable=no`);
+			window.open(`:5173/aptiTest/${type}`, title, `width=${width},height=${height},left=${left},top=${top},resizable=no`);
 		})
 		.catch(error => {
 			console.error("요청 실패:", error);

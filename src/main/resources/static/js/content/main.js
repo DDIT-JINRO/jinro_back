@@ -18,7 +18,7 @@ const roadmapPopup = () => {
 	const popupCookie = getCookie('popup');
 	
 	if(popupCookie != 'done') {
-		const roadmapUrl = frontUrl + '/roadmap';
+		const roadmapUrl = ':5173/roadmap';
 	
 		const width  = 1084;
 		const height = 736;
